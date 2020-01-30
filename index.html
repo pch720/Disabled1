@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow: hidden;">
+<html lang="en"><!--style="overflow: hidden;"-->
 
 <head>
 
@@ -20,7 +20,12 @@
 
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-
+<style>
+#loginModal {
+  top: 30%;
+  margin-top: -50px;
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -52,36 +57,71 @@
     </ul>
   </nav> -->
 
-  <!-- Header -->
+  <!-- 헤더 -->
   <header class="masthead d-flex">
     <div class="container text-center my-auto">
-      <h1 class="mb-1">Stylish Portfolio</h1>
+      <h1 class="mb-1">Do&nbsp;Gether</h1>
       <h3 class="mb-5">
         <em>Do something together with somebody</em>
       </h3>
-      <div>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#" style="margin-bottom: 1%; width: 150px;">함께하기</a>
-      </div>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about" style="width: 150px;">더보기</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" 
+            href="#" data-toggle="modal" data-target="#loginModal">함께하기</a>
     </div>
-    <div class="overlay"></div>
   </header>
 
-  <!-- About -->
+<!-- 로그인 창 -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content"
+      style="max-width: 684px;height:400px; ;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
+      <div class="modal-body text-center">
+        
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <!-- Portfolio Modal - Title -->
+              <i class="fas fa-users"style="font-size:4rem;margin-bottom:2%;"></i>
+              <h2 class="portfolio-modal-title">로그인 하기</h2>
+              <hr>
+              <form class="user" onsubmit="return uhs();" method="POST">
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="email" name="userEmail" placeholder="이메일 주소">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-user" id="pw" name="userPassword" placeholder="비밀번호">
+                  </div>
+                  
+                  <input type="submit" class="btn btn-primary btn-user btn-block" value="로그인">
+                
+                </form>
+                <hr>
+                <div class="text-center">
+                  <a class="small" style="color: black;">아이디/비밀번호 찾기</a>
+                </div>
+                <div class="text-center">
+                  <a class="small" style="color: black;">Do Gether 회원가입 하기</a>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- 설명 -->
   <section class="content-section bg-light" id="about">
     <div class="container text-center">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-          <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-            <a href="https://unsplash.com/">Unsplash</a>!</p>
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+          <h2>이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 수 있다!</h2>
+          <p class="lead mb-5">한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모인다.</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#portfolio">주요 기능</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!--  -->
   <section class="content-section bg-primary text-white text-center" id="services">
     <div class="container">
       <div class="content-section-heading">
@@ -91,7 +131,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
+            <i class="fas fa-users"></i>
           </span>
           <h4>
             <strong>Responsive</strong>
@@ -100,7 +140,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
+            <i class="far fa-calendar-check"></i>
           </span>
           <h4>
             <strong>Redesigned</strong>
@@ -109,7 +149,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
+            <i class="far fa-comment-dots"></i>
           </span>
           <h4>
             <strong>Favorited</strong>
@@ -120,7 +160,7 @@
         </div>
         <div class="col-lg-3 col-md-6">
           <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
+            <i class="far fa-sticky-note"></i>
           </span>
           <h4>
             <strong>Question</strong>
@@ -131,26 +171,16 @@
     </div>
   </section>
 
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">Welcome to
-        <em>your</em>
-        next website!</h2>
-      <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
+  <!-- 주요기능 -->
+  <section style="padding-top: 2rem;padding-bottom: 5rem;" id="portfolio">
     <div class="container">
       <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">Portfolio</h3>
-        <h2 class="mb-5">Recent Projects</h2>
+        <h3 class="text-secondary mb-0">Do Gether's</h3>
+        <h2 class="mb-5">주요 기능과 설명</h2>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Stationary</h2>
@@ -161,7 +191,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Ice Cream</h2>
@@ -172,7 +202,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Strawberries</h2>
@@ -183,7 +213,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Workspace</h2>
@@ -205,16 +235,6 @@
       <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
     </div>
   </section>
-
-  <!-- Map -->
-  <section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small>
-      <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-  </section>
-
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
@@ -230,12 +250,12 @@
           </a>
         </li>
         <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white" href="#">
+          <a class="social-link rounded-circle text-white" href="https://github.com/pch720">
             <i class="icon-social-github"></i>
           </a>
         </li>
       </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Your Website 2019</p>
+      <p class="text-muted small mb-0">KOPO_kangseo - 1920110014 &copy; 2020</p>
     </div>
   </footer>
 
