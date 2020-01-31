@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><!--style="overflow: hidden;"-->
+<html lang="en">
 
 <head>
 
@@ -21,44 +21,42 @@
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 <style>
-#loginModal {
+#loginModal, #userModal {
   top: 30%;
-  margin-top: -50px;
+  margin-top: -5%;
 }
 </style>
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation
+  <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
   </a>
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="js-scroll-trigger" href="#page-top">Do Gether</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
+        <a class="js-scroll-trigger" href="#page-top">홈</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
+        <a class="js-scroll-trigger" href="#about">소개</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
+        <a class="js-scroll-trigger" href="#services">개발 목적</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
+        <a class="js-scroll-trigger" href="#portfolio">주요 기능</a>
       </li>
     </ul>
-  </nav> -->
+  </nav>
 
   <!-- 헤더 -->
-  <header class="masthead d-flex">
+  <header class="masthead d-flex"
+    style="padding-top: 6rem;">
     <div class="container text-center my-auto">
       <h1 class="mb-1">Do&nbsp;Gether</h1>
       <h3 class="mb-5">
@@ -66,7 +64,10 @@
       </h3>
           <a class="btn btn-primary btn-xl js-scroll-trigger" 
             href="#" data-toggle="modal" data-target="#loginModal">함께하기</a>
-    </div>
+            <a  class="btn btn-primary btn-xl js-scroll-trigger"
+            href="#" data-toggle="modal" data-target="#userModal">함께하기</a>
+          </div>
+    
   </header>
 
 <!-- 로그인 창 -->
@@ -107,26 +108,51 @@
   </div>
 </div>
 
+<!-- 유저 창 -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content"
+         style="max-width: 684px;height:400px; ;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
+      <div class="modal-body text-center">
 
-  <!-- 설명 -->
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <!-- Portfolio Modal - Title -->
+            <i class="fas fa-users"style="font-size:4rem;margin-bottom:2%;"></i>
+            <h2 class="portfolio-modal-title">반갑습니다. ***회원님</h2>
+            <hr>
+              <input type="button" onclick="location='main.do'" class="btn btn-primary btn-user btn-block" value="들어가기"style="margin-top:10%;">
+            <hr>
+              <input type="button" onclick="location='main.do'" class="btn btn-danger btn-user btn-block" value="로그아웃">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- 소개 -->
   <section class="content-section bg-light" id="about">
     <div class="container text-center">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">Do Gether's</h3>
+        <h2 class="mb-5">소개</h2>
+      </div>
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2>이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 수 있다!</h2>
-          <p class="lead mb-5">한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모인다.</p>
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#portfolio">주요 기능</a>
+          <h2>이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 것입니다!</h2>
+          <p class="lead mb-5">한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모일것입니다.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!--  -->
+  <!-- 개발목적 -->
   <section class="content-section bg-primary text-white text-center" id="services">
     <div class="container">
       <div class="content-section-heading">
-        <h3 class="text-secondary mb-0">Services</h3>
-        <h2 class="mb-5">What We Offer</h2>
+        <h3 class="text-secondary mb-0">do gether's</h3>
+        <h2 class="mb-5">개발 목적</h2>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
@@ -134,38 +160,36 @@
             <i class="fas fa-users"></i>
           </span>
           <h4>
-            <strong>Responsive</strong>
+            <strong>COLLABORATION</strong>
           </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
+          <p class="text-faded mb-0">목적이 같은 사람들과의 협동</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="far fa-calendar-check"></i>
           </span>
           <h4>
-            <strong>Redesigned</strong>
+            <strong>STEADINESS</strong>
           </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+          <p class="text-faded mb-0">일정 기간 동안의 꾸준함을 확인</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="far fa-comment-dots"></i>
           </span>
           <h4>
-            <strong>Favorited</strong>
+            <strong>COMMUNICATION</strong>
           </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
+          <p class="text-faded mb-0">목적이 같은 사람들과의 소통</p>
         </div>
         <div class="col-lg-3 col-md-6">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="far fa-sticky-note"></i>
           </span>
           <h4>
-            <strong>Question</strong>
+            <strong>SHARE</strong>
           </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
+          <p class="text-faded mb-0">목적을 이루면서 느낀것을 공유</p>
         </div>
       </div>
     </div>
@@ -183,60 +207,51 @@
           <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
-                <h2>Stationary</h2>
-                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                <h2>작업방</h2>
+                <p class="mb-0">목적이 같은사람들끼리 모여서 목적을 이루는 작업방</p>
               </span>
             </span>
-            <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+            <img class="img-fluid" src="img/talk.jpg" alt="">
           </a>
         </div>
         <div class="col-lg-6">
           <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
-                <h2>Ice Cream</h2>
-                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                <h2>메신저</h2>
+                <p class="mb-0">작업방 사람들끼리 서로 연락할수 있는 메신저</p>
               </span>
             </span>
-            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+            <img class="img-fluid" src="img/chat.jpg" alt="">
           </a>
         </div>
         <div class="col-lg-6">
           <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
-                <h2>Strawberries</h2>
-                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                <h2>캘린더</h2>
+                <p class="mb-0">일정 기간동안 한 작업의 양이나 꾸준함을 보여주는 캘린더</p>
               </span>
             </span>
-            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+            <img class="img-fluid" src="img/calendar.jpg" alt="">
           </a>
         </div>
         <div class="col-lg-6">
           <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
-                <h2>Workspace</h2>
-                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                <h2>게시판</h2>
+                <p class="mb-0">일을 이루면서 발생한 문제나 느낀점 등을 공유할 수 있는 게시판</p>
               </span>
             </span>
-            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+            <img class="img-fluid" src="img/post-it.jpg" alt="">
           </a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Call to Action -->
-  <section class="content-section bg-primary text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-    </div>
-  </section>
   <!-- Footer -->
-  <footer class="footer text-center">
+  <footer class="footer text-center" style="background-color: #ecb807;">
     <div class="container">
       <ul class="list-inline mb-5">
         <li class="list-inline-item">
