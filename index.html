@@ -136,7 +136,7 @@ body::-webkit-scrollbar{display: none;}
 <div data-backdrop="static" class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content"
-      style="max-width: 684px;height:400px; ;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
+      style="max-width: 684px;height:500px; ;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
       <div class="modal-body text-center">
         
           <div class="row justify-content-center">
@@ -147,21 +147,31 @@ body::-webkit-scrollbar{display: none;}
               <hr>
               <form class="user" method="POST">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="userEmail" placeholder="이메일 주소">
+                    <input type="text" class="form-control form-control-user" name="userEmail" id="Regemail" placeholder="이메일 주소" onkeyup="javascript:ee();">
+                  <div class="small" id="ee" style="display: none;">
+                  이메일 형식에 맞게 입력해주세요.</div>
+                  <div class="small" id="eb" style="display: none;">
+                  이메일을 입력해주세요.</div>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" name="userPassword" placeholder="비밀번호">
+                    <input type="password" class="form-control form-control-user" name="userPassword" id="Regpw" placeholder="비밀번호" onkeyup="javascript:pe();">
+                    <div class="small" id="pe" style="display: none;">
+                      비밀번호는 영문과 숫자를 혼합해 8자 이상으로 입력해주세요.</div>
+                    <div class="small" id="pb" style="display: none;">
+                      비밀번호를 입력해주세요.</div>
                   </div>
-                  <input type="button" id="close" class="btn btn-danger btn-user btn-block" value="닫기">
-                  <input type="submit" class="btn btn-primary btn-user btn-block" value="회원가입">
-                
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-user" name="PasswordCheck" id="Regpwc" placeholder="비밀번호 확인" onkeyup="javascript:pce();">
+                    <div class="small" id="pce" style="display: none;">
+                      비밀번호와 동일하게 입력해주세요.</div>
+                  </div>
+                <div>
+                  <input type="button" id="close" class="btn btn-danger btn-user" value="닫기" style="width: 49%;">
+                  <input type="submit" class="btn btn-primary btn-user" value="회원가입" style="width: 50%;">
+                </div>
                 </form>
-                <hr>
                 <div class="text-center">
                   <a class="small" style="color: black;">아이디/비밀번호 찾기</a>
-                </div>
-                <div class="text-center">
-                  <a class="small" style="color: black;" data-toggle="modal" data-target="#regModal">Do Gether 회원가입 하기</a>
                 </div>
             </div>
           </div>
@@ -330,6 +340,46 @@ body::-webkit-scrollbar{display: none;}
     $('#close').click(function(){
       $('#regModal').modal("hide");
     });
+    function ee(){
+      var emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+      if(!emailRule.test($('#Regemail').val())){
+        $('#ee').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+        $('#eb').attr('style','display:none;')
+      }else{
+        $('#ee').attr('style','display:none;')
+      }
+    }
+    function pe(){
+      var pwRule = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,}$/;
+
+      if($('#Regemail').val()===''){
+        $('#ee').attr('style','display:none;')
+        $('#eb').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+      }
+      if(!pwRule.test($('#Regpw').val())){
+        $('#pe').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+        $('#pb').attr('style','display:none;')
+      }else{
+        $('#pe').attr('style','display:none;')
+      }
+      if($('#Regpwc').val()===$('#Regpw').val() || $('#Regpwc').val()===''){
+        $('#pce').attr('style','display:none;')
+      }else{
+        $('#pce').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+      }
+    }
+    function pce(){
+      if($('#Regpw').val()===''){
+        $('#pb').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+        $('#pe').attr('style','display:none;')
+      }
+      if($('#Regpwc').val()===$('#Regpw').val()){
+        $('#pce').attr('style','display:none;')
+      }else{
+        $('#pce').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+      }
+    }
   </script>
 </body>
 
