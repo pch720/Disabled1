@@ -23,7 +23,7 @@
 <style>
 .modal {
   top: 20%;
-  margin-top: -5%;
+  margin-top: -10%;
 }
 body::-webkit-scrollbar{display: none;}
 </style>
@@ -145,9 +145,9 @@ body::-webkit-scrollbar{display: none;}
               <i class="fas fa-users"style="font-size:3rem;margin-bottom:2%;"></i>
               <h2 class="portfolio-modal-title">회원가입 하기</h2>
               <hr>
-              <form class="user" method="POST">
+              <form class="user" method="POST" onsubmit="return Reg();">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="userName" id="Regname" placeholder="이름" onkeyup="javascript:ne();">
+                  <input type="text" class="form-control form-control-user" name="userName" id="Regname" placeholder="이름" onkeyup="javascript:ne();" value="">
                 <div class="small" id="nb" style="display: none;">
                 이름을 입력해주세요.</div>
                 </div>
@@ -345,7 +345,17 @@ body::-webkit-scrollbar{display: none;}
   <script src="js/stylish-portfolio.min.js"></script>
   <script>
     $('#close').click(function(){
-      $('#regModal').modal("hide");
+      let res = confirm('회원가입 창을 닫으시면 입력하신 정보가 초기화됩니다. 닫으시겠습니까?');
+      if(res){
+        document.getElementById("Regname").value='';
+        document.getElementById("Regnn").value='';
+        document.getElementById("Regemail").value='';
+        document.getElementById("Regpw").value='';
+        document.getElementById("Regpwc").value='';
+        $('#regModal').modal("hide");
+      }else{
+        return false;
+      }
     });
     function ne(){
       if($('#Regname').val()===''){
@@ -414,6 +424,12 @@ body::-webkit-scrollbar{display: none;}
         $('#pce').attr('style','display:none;')
       }else{
         $('#pce').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+      }
+    }
+    function Reg(){
+      let res=confirm("입력하신 정보로 가입하시겠습니까?")
+      if(!res){
+        return false;
       }
     }
   </script>
