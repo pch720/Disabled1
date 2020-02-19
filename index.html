@@ -86,10 +86,16 @@
             <hr>
             <form>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="email" name="username" placeholder="이메일 주소">
+                <input type="text" class="form-control form-control-user" id="email" name="username" placeholder="이메일 주소" onkeyup="return ruhs(10);">
+                <div class="small" id="ee1" style="display: none;">
+                  이메일 형식에 맞게 입력해주세요.</div>
+                <div class="small" id="eb1" style="display: none;">
+                  이메일을 입력해주세요.</div>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control form-control-user" id="pw" name="password" placeholder="비밀번호">
+                <input type="password" class="form-control form-control-user" id="pw" name="password" placeholder="비밀번호" onkeyup="return ruhs(11);">
+                <div class="small" id="eb1" style="display: none;">
+                  비밀번호를 입력해주세요.</div>
               </div>
 
               <input type="submit" class="btn btn-primary btn-user btn-block" value="로그인">
