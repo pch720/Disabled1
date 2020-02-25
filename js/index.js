@@ -31,6 +31,16 @@ function ruhs(num){
     let Regpw=$('#Regpw');
     let Regpwc=$('#Regpwc');
 
+    if(num>=10){
+        if($('#email').val()===''){
+            $('#eb1').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+            $('#ee1').attr('style','display:none;')
+        }else if(!emailRule.test($('#email').val())){
+            $('#eb1').attr('style','display:none;')
+            $('#ee1').attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
+        }
+    }
+
     if($('#Regname').val()===''){
         nb.attr('style','text-align: left; margin-left: 1%; color: #FF0000; margin-bottom: -2%;')
     }else{
