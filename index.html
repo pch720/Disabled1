@@ -63,16 +63,16 @@
     <h3 class="mb-5">
       <em>Do something together with somebody</em>
     </h3>
-    <a sec:authorize="isAnonymous()" class="btn btn-primary btn-xl js-scroll-trigger"
+    <a class="btn btn-primary btn-xl js-scroll-trigger"
        href="#" data-toggle="modal" data-target="#loginModal">함께하기</a>
-    <a sec:authorize="isAuthenticated()" class="btn btn-primary btn-xl js-scroll-trigger"
+    <a class="btn btn-primary btn-xl js-scroll-trigger"
        href="#" data-toggle="modal" data-target="#userModal">함께하기</a>
   </div>
 
 </header>
 
 <!-- 로그인 창 -->
-<div sec:authorize="isAnonymous()" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content"
          style="max-width: 684px;height:auto;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
@@ -116,7 +116,7 @@
 </div>
 
 <!-- 유저 창 -->
-<div sec:authorize="isAuthenticated()" class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content"
          style="max-width: 684px;height:auto;margin: 0px auto;background-color: #ecb807;border: 0px;border-radius: 35px;">
