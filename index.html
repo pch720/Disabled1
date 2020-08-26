@@ -1,297 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevPark</title>
 
-  <style>
-    .floatMenu{
-      position: absolute;
-      margin-top: 120px;
-    }
-    .Menu1 {
-      width: 220px;
-      height: 200px;
-      left: 5%;
-      top: 10px;
-    }
-    .Menu2 {
-      width: 250px;
-      height: 200px;
-      right: 5%;
-      top: 10px;
-    }
+    <!-- jQuery load -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery load end -->
+    <!-- vue load -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- vue load end -->
+    <!-- bootstrap CSS load -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap CSS load end -->
 
-
-    /* front pane, placed above back */
-    .front{
-      transform: rotateY(0deg);
-    }
-    /* back, initially hidden pane */
-    .back {
-      transform: rotateY(180deg);
-    }
-    /* flip the pane when hovered */
-    .flip-container.hover .flipper {
-      transform: rotateY(180deg);
-    }
-    .flip-container, .front, .back {
-      width: 250px;
-      height: 250px;
-    }
-    /* flip speed goes here */
-    .flipper {
-      transition: 0.5s;
-      /* 하위요소에 3D 좌표값 지정 */
-      transform-style: preserve-3d;
-      position: relative;
-    }
-    /* hide back of pane during swap */
-    .front, .back{
-      position: absolute;
-      backface-visibility:hidden;
-    }
-  </style>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>그룹 페이지</title>
-
-  <!-- hover -->
-  <link href="/css/hover.css" rel="stylesheet">
-
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-</head>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<body id="page-top" style="background-color: deepskyblue;">
-
-<!-- 네비게이션바 -->
-<div class="floatMenu Menu1">
-  <div class="modal-content">
-    <div class="modal-header" style="justify-content: center;">
-      <h5 class="modal-title">안뇽 (10명)</h5>
-    </div>
-    <div class="modal-footer" style="justify-content: center;">
-      <button class="btn btn-secondary" type="button">현재 진행 상황 확인</button>
-    </div>
-  </div>
-</div>
-
-<div class="floatMenu Menu2">
-  <!--떠다니는 해야될 일-->
-  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-      <!-- front content -->
-      <div class="modal-content front" style="position: absolute!important;">
-        <div class="modal-header" style="justify-content: center;">
-          <h5 class="modal-title">할 일</h5>
-        </div>
-        <form>
-        <div class="modal-body" style="display: block;overflow: scroll; height: 120px;">
-          <div class="custom-control custom-checkbox mr-sm-2">
-            <input type="checkbox" class="custom-control-input" id="do">
-            <label class="custom-control-label" for="do">이 닦기</label>
-          </div>
-            <div class="custom-control custom-checkbox mr-sm-2">
-              <input type="checkbox" class="custom-control-input" id="do1">
-              <label class="custom-control-label" for="do1">이 닦기</label>
+    <!-- Custom CSS load -->
+    <link rel="stylesheet" href="assets/index.css" />
+    <!-- Custom CSS load end -->
+    <!-- fullpage load -->
+    <link rel="stylesheet" href="assets/fullpage/fullpage.css" />
+    <script type="text/javascript" src="assets/fullpage/fullpage.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#fullpage").fullpage({
+          licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+          autoScrolling: true,
+          scrollHorizontally: true,
+        });
+      });
+    </script>
+    <!-- fullpage load end -->
+    <!-- Font Awesome load -->
+    <script
+      src="https://kit.fontawesome.com/56dcc4fdd8.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awesome load end -->
+  </head>
+  <body>
+    <div id="fullpage">
+      <div id="mp" class="section">
+        <div id="name">열정으로 먹고사는<br />주니어개발자 박문수입니다</div>
+      </div>
+      <div id="introduce" class="section">
+        <div id="my-self" class="row">
+          <div style="text-align: center;" class="col-sm-6">
+            <div id="my_image">
+              <img src="assets/img/face.jpg" />
             </div>
-          <div class="custom-control custom-checkbox mr-sm-2">
-            <input type="checkbox" class="custom-control-input" id="do1">
-            <label class="custom-control-label" for="do1">이 닦기</label>
-          </div><div class="custom-control custom-checkbox mr-sm-2">
-          <input type="checkbox" class="custom-control-input" id="do1">
-          <label class="custom-control-label" for="do1">이 닦기</label>
-        </div><div class="custom-control custom-checkbox mr-sm-2">
-          <input type="checkbox" class="custom-control-input" id="do1">
-          <label class="custom-control-label" for="do1">이 닦기</label>
-        </div>
-        </div>
-          <div class="modal-footer"style="justify-content: center;">
-            <button class="btn btn-secondary" id="add" type="button">한 일로 변경</button>
+            <a class="i_a" href="https://github.com/DevPrkms" target="_blank"
+              ><i class="icon fab fa-github"></i
+            ></a>
+            <a class="i_a" href="https://www.instagram.com/m_oonoo_s/"
+              ><i class="icon fab fa-instagram"></i
+            ></a>
           </div>
-        </form>
-      </div>
-      <!-- 할 일 추가 -->
-      <div class="modal-content back">
-        <div class="modal-header" style="justify-content: center;">
-          <h5 class="modal-title">할 일 추가</h5>
-        </div>
-        <div class="modal-footer">
-          <form style="text-align: center;">
-          <label>
-            <textarea cols="100" rows="4" class="form-control"></textarea>
-          </label>
-            <button class="btn btn-primary" type="button"id="add1">할일보기</button>
-            <button class="btn btn-secondary" type="button">추가하기</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--떠다니는 메모장-->
-  <div class="modal-content">
-    <div class="modal-header" style="justify-content: center;">
-      <h5 class="modal-title">메모장</h5>
-    </div>
-    <div class="modal-footer" style="justify-content: center;">
-      <label>
-        <textarea cols="100" rows="7" class="form-control"></textarea>
-      </label>
-    </div>
-  </div>
-</div>
-
-
-<!-- 그룹컨텐츠 -->
-<section style="text-align: -webkit-center">
-  <<a href="#" class="modal-content" style="margin-top: 100px; width: 56%; height: 150px; min-width: 650px;text-decoration: none;color: black;">
-  내용을 입력해 주세요.
-</a>
-  <div class="modal-content" style="margin-top: 10px; width: 56%; min-width: 650px;">
-    <div>
-      <div style="text-align:right;">
-        <!-- Default dropright button -->
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px; margin-right: 5px;">
-            더보기
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">수정</a>
-            <a class="dropdown-item" href="#">삭제</a>
+          <div id="ms_contents" class="col-sm-6">
+            <p id="profile">#Profile</p>
+            <p class="impactp">박문수 / Moonsoo Park</p>
+            <p><strong>birth :</strong> 1998.09.25 / 서울특별시</p>
+            <p><strong>Contact :</strong> 010-9536-7314 / DevPrkms@gmail.com</p>
+            <p>
+              <strong>Graduation :</strong> 2019.03 ~ : 한국폴리텍대학
+              서울강서캠퍼스 재학
+            </p>
+            <hr />
+            <p class="impactp">Who am I?</p>
+            <p><strong style="color: red;">열정</strong>빼면 시체!</p>
+            <p>한번 빠지면 아주 끝장을 보는 개발자!</p>
+          </div>
+          <div id="tech">
+            <img src="assets/img/js.png" />
+            <img src="assets/img/reactjs.png" />
+            <img src="assets/img/flutter.png" />
+            <img src="assets/img/mariadb.png" />
+            <img src="assets/img/mongodb.png" />
+            <img src="assets/img/oracle.png" />
+            <img src="assets/img/ec2.png" />
           </div>
         </div>
       </div>
-      <hr>
-      <div>
-        <div style="width:48%;display:inline-block;text-align:left;"><a style="color:gray;">작성자 : </a>유동현</div>
-        <div style="width:48%;display:inline-block;text-align:right;"><a style="color:gray;">작성일 : </a>2020-02-02</div>
-      </div>
-      <hr>
-      <div id="content" style="margin:0 auto;width:40%;margin-top:3%;margin-bottom:2%;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-      <hr>
-      <button id="li" value="0"class="btn btn-outline-danger" style="margin-bottom: 5px;border-radius: 20px;"><i id="ke" class="far fa-heart"> 좋아요</i></button>
-      <button class="btn btn-outline-info" style="margin-bottom: 5px;border-radius: 20px;">댓글 달기</button>
-    </div>
-  </div>
-  <div class="modal-content" style="margin-top: 10px; width: 56%; min-width: 650px;">
-    <div>
-      <div style="text-align:right;">
-        <!-- Default dropright button -->
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px; margin-right: 5px;">
-            더보기
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">수정</a>
-            <a class="dropdown-item" href="#">삭제</a>
+      <div id="portfolio" class="section">
+        <span id="project_bottom">프로젝트 제목 클릭 시 코드로 이동</span>
+        <div class="slide">
+          <div class="portfolio">
+            <a target="_blank" href="https://github.com/DevPrkms/UrgentFire2019"
+              ><p class="project_name">
+                #서울시_공중화장실_위치정보_제공 #급한불
+              </p></a
+            >
+            <object
+              title="YouTube video player"
+              class="youtube-player"
+              type="text/html"
+              width="100%"
+              height="315"
+              data="//www.youtube.com/embed/RJ3TslOBbrI"
+              allowFullScreen
+            ></object>
+            <div class="row project_contents">
+              <div class="col-sm-6">
+                <p class="ptitle">프로젝트 설명</p>
+                <span
+                  >"급한불"은 서울시 공중화장실 위치데이터를 사용하여 지도에
+                  나타내어 주는 사이트입니다.<br />또한, 공중화장실에 대한
+                  커뮤니티가 존재하며, 작성된 게시글은 오피니언 마이닝을 통해
+                  긍정과 부정반응으로 분류되어 나타내어 집니다.</span
+                >
+              </div>
+              <div class="col-sm-6">
+                <p class="ptitle">적용기술</p>
+                <p>
+                  - 프레임워크 : Spring Framework<br />
+                  - 데이터베이스 : Oracle 11g<br />
+                  - 적용 공공데이터(OpenAPI) : 서울시 공중화장실 위치정보<br />
+                  - 기타 : Opinion Mining, Kakaomap API, Geolocation API
+                </p>
+              </div>
+              <div class="dl_file">
+                <a
+                  href="https://github.com/DevPrkms/UrgentFire-Doc/raw/master/1920110012%20%EB%B0%95%EB%AC%B8%EC%88%98_%ED%99%94%EB%A9%B4%EC%84%A4%EA%B3%84%EC%84%9C.pptx"
+                  target="_blank"
+                  ><span>화면설계서</span></a
+                >
+                <a
+                  href="https://github.com/DevPrkms/UrgentFire-Doc/raw/master/1920110012%20%EB%B0%95%EB%AC%B8%EC%88%98_ERD.xlsx"
+                  target="_blank"
+                  ><span>개발산출물</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="portfolio">
+            <a
+              target="_blank"
+              href="https://github.com/DevPrkms/my-portfolio-home"
+              ><p class="project_name">
+                #개인_포트폴리오_제작도우미 #My_Portfolio
+              </p></a
+            >
+            <object
+              title="YouTube video player"
+              class="youtube-player"
+              type="text/html"
+              width="100%"
+              height="315"
+              data="//www.youtube.com/embed/3nPScU7aBsM"
+              allowFullScreen
+            ></object>
+            <div class="row project_contents">
+              <div class="col-sm-6">
+                <p class="ptitle">프로젝트 설명</p>
+                <span
+                  >“My Portfolio”는 개인 프로젝트(작업) 파일과 내용을 작성하고
+                  작성된 내용을 바탕으로 웹 포트폴리오를 제작해주는
+                  사이트입니다.</span
+                >
+              </div>
+              <div class="col-sm-6">
+                <p class="ptitle">적용기술</p>
+                <p>
+                  - 프레임워크 : Spring Framework<br />- 데이터베이스 : MySQL,
+                  Redis<br />- 기타 :<br />- Rserve(단어 빈도 수 분석)<br />-
+                  jQuery(비동기 서버통신 - ajax)<br />- MultiPartFile(파일
+                  업로드 & 다운로드)<br />- amChart(워드 클라우드)
+                </p>
+              </div>
+              <div class="dl_file">
+                <a
+                  href="https://github.com/DevPrkms/my_portfolio_documents/raw/master/%ED%99%94%EB%A9%B4%EC%84%A4%EA%B3%84%EC%84%9C%20%EC%9E%91%EC%97%85/1920110012_%EB%B0%95%EB%AC%B8%EC%88%98.pptx"
+                  target="_blank"
+                  ><span>화면설계서</span></a
+                >
+                <a
+                  href="https://github.com/DevPrkms/my_portfolio_documents/raw/master/%EC%82%B0%EC%B6%9C%EB%AC%BC/%EC%9E%91%EC%97%85%EB%82%B4%EC%9A%A9/1920110012_%EB%B0%95%EB%AC%B8%EC%88%98.xlsx"
+                  target="_blank"
+                  ><span>개발산출물</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="portfolio">
+            <a target="_blank" href="https://github.com/DevPrkms/React_Project"
+              ><p class="project_name">
+                #우리동네_소식_모아보기 #My_NewsPaper
+              </p></a
+            >
+            <div class="no-image">보완 개발중</div>
+            <div class="row project_contents">
+              <div class="col-sm-6">
+                <p class="ptitle">프로젝트 설명</p>
+                <p>
+                  네이버 뉴스를 크롤링하여 Geolocation API를 기반으로 현재
+                  지역의 뉴스만 보여주는 서비스입니다.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="ptitle">적용기술</p>
+                <p>
+                  - 프레임워크 : Spring Boot(Gradle) & ReactJS<br />-
+                  데이터베이스 : MariaDB<br />- 기타 :<br />- Geolocation
+                  API(현재 위치 검색)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="portfolio">
+            <a target="_blank" href="https://github.com/DevPrkms/koin_app"
+              ><p class="project_name">#한이음_ICT #잔돈_저금_앱 #koin</p></a
+            >
+            <div class="no-image">개발중</div>
+            <div class="row project_contents">
+              <div class="col-sm-6">
+                <p class="ptitle">프로젝트 설명</p>
+                <p>
+                  OpenBanking API를 사용하여 판매자와 소비자의 계좌를 연동하고
+                  현금 거래 후 남은 잔돈을 계좌로 이체해주는 서비스입니다.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="ptitle">적용기술</p>
+                <p>
+                  - 프레임워크 : Spring Boot & Flutter<br />- 데이터베이스 :
+                  MongoDB<br />- 기타 :<br />- OpenBanking API(현재 위치
+                  검색)<br />- BlockChain(예정)
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <hr>
-      <div>
-        <div style="width:48%;display:inline-block;text-align:left;"><a style="color:gray;">작성자 : </a>유동현</div>
-        <div style="width:48%;display:inline-block;text-align:right;"><a style="color:gray;">작성일 : </a>2020-02-02</div>
-      </div>
-      <hr>
-      <div id="content12" style="margin:0 auto;width:40%;margin-top:3%;margin-bottom:2%;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-      <hr>
-      <button id="li12" value="0"class="btn btn-outline-danger" style="margin-bottom: 5px;border-radius: 20px;"><i id="ke" class="far fa-heart"> 좋아요</i></button>
-      <button class="btn btn-outline-info" style="margin-bottom: 5px;border-radius: 20px;">댓글 달기</button>
     </div>
-  </div>
-  <div class="modal-content" style="margin-top: 10px; width: 56%; min-width: 650px;">
-    <div>
-      <div style="text-align:right;">
-        <!-- Default dropright button -->
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px; margin-right: 5px;">
-            더보기
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">수정</a>
-            <a class="dropdown-item" href="#">삭제</a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div>
-        <div style="width:48%;display:inline-block;text-align:left;"><a style="color:gray;">작성자 : </a>유동현</div>
-        <div style="width:48%;display:inline-block;text-align:right;"><a style="color:gray;">작성일 : </a>2020-02-02</div>
-      </div>
-      <hr>
-      <div id="content1" style="margin:0 auto;width:40%;margin-top:3%;margin-bottom:2%;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-      <hr>
-      <button id="li1" value="0"class="btn btn-outline-danger" style="margin-bottom: 5px;border-radius: 20px;"><i id="ke" class="far fa-heart"> 좋아요</i></button>
-      <button class="btn btn-outline-info" style="margin-bottom: 5px;border-radius: 20px;">댓글 달기</button>
-    </div>
-  </div>
-</section>
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="js/stylish-portfolio.min.js"></script>
-<script>
-  $(document).ready(function() {
-
-    // 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
-    const floatPosition = parseInt($(".floatMenu").css('top'));
-    // 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
-
-    $(window).scroll(function() {
-      // 현재 스크롤 위치를 가져온다.
-      const scrollTop = $(window).scrollTop();
-      const newPosition = scrollTop + floatPosition + "px";
-
-      /* 애니메이션 없이 바로 따라감
-       $("#floatMenu").css('top', newPosition);
-       */
-
-      $(".floatMenu").stop().animate({
-        "top" : newPosition
-      }, 500);
-
-    }).scroll();
-
-  });
-  $('#li').click(function () {
-    if ($('#li').val() === "0"){
-      $('#ke').removeClass('far');
-      $('#ke').addClass('fas');
-      $('#li').attr('value', '1');
-    }
-    else {
-      $('#ke').removeClass('fas');
-      $('#ke').addClass('far');
-      $('#li').attr('value', '0')
-    }
-  })
-  /*클릭시 할일한일 뒤집기*/
-  $('#add1,#add').click(function() {
-    $(this).closest('.flip-container').toggleClass('hover');
-    $(this).css('transform, rotateY(180deg)');
-  });
-</script>
-</body>
-<script src="../assets/dist/js/bootstrap.bundle.js"></script>
-<script src="js/form-validation.js"></script></body>
+  </body>
+  <!-- bootstrap JS load -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"
+  ></script>
+  <!-- bootstrap JS load end -->
 </html>
